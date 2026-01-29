@@ -1,0 +1,8 @@
+@font-face {
+    font-family: EdEddnEddyFont;
+    src: url(https://chat.mikoroonii.com/v2/styles/EdEddnEddyFont.ttf);
+}
+
+#example {
+    font-family: 'EdEddnEddyFont', cursive;
+}

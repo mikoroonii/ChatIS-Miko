@@ -3,7 +3,7 @@ $('#example img').attr('loading', 'lazy');
 
 const Settings = {
     fonts: [ 'BalooTammudu', 'SegoeUI', 'Roboto', 'Lato', 'NotoSans', 'SourceCodePro',
-        'Impact', 'Comfortaa', 'DancingScript', 'IndieFlower', 'OpenSans', 'AlsinaUltrajada'],
+        'Impact', 'Comfortaa', 'DancingScript', 'IndieFlower', 'OpenSans', 'AlsinaUltrajada', 'EdEddnEddy' ],
     sizes: ['small', 'medium', 'large'],
     strokes: ['thin', 'medium', 'thick', 'thicker'],
     shadows: ['small', 'medium', 'large'],
