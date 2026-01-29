@@ -2486,11 +2486,10 @@ var Chat = {
                         container.style.opacity = 1;
                         break;
                     case 'audio':
-                        if (accessLevel < 1000) return
-                        if (message.params.length > 1 && message.params[1].startsWith('http')) {
-                            const url = text;
-                            const audio = new Audio(url);
-                            audio.play();
+                        if (accessLevel < 1000) return;
+                        let audioUrl = (text.match(/https?:\/\/[^\s]+/) || [])[0];
+                        if (audioUrl) {
+                            new Audio(audioUrl).play();
                         }
                         break;
                     case 'break':
