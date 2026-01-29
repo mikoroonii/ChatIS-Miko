@@ -38,6 +38,21 @@ header {
 header img {
     width: 250px;
     height: auto;
+    
+    transform-style: preserve-3d;
+    animation: spin 2s linear infinite;
+}
+
+
+@keyframes spin {
+    0% {
+        /* Start flat */
+        transform: perspective(300px) rotateY(0deg) rotateX(0deg) scale(1);
+    }
+    100% {
+        /* Complete both rotations back to center */
+        transform: perspective(300px) rotateY(360deg) rotateX(0deg) scale(1);
+    }
 }
 
 header div {
