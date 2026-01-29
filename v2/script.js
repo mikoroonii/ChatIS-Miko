@@ -2137,11 +2137,11 @@ var Chat = {
                         showFloat(1, "[ChatIS] Link:\n" + window.location.href);
                     }
                         break;
-                    case 'uuid': {
-                        if (accessLevel < 1000) return;
-                        // Chat.write('[ChatIS]', {}, 'UUID: ' + Chat.onlineTracker.uuid);
-                        showFloat(1, "[ChatIS] UUID:\n" + Chat.onlineTracker.uuid);
-                    }
+                    // case 'uuid': {
+                    //     if (accessLevel < 1000) return;
+                    //     // Chat.write('[ChatIS]', {}, 'UUID: ' + Chat.onlineTracker.uuid);
+                    //     showFloat(1, "[ChatIS] UUID:\n" + Chat.onlineTracker.uuid);
+                    // }
                         break;
                     case 'reload': {
                         if (accessLevel < 500) return;
@@ -2182,18 +2182,18 @@ var Chat = {
                             }, 100);
                     }
                         break;
-                    case 'stop': {
-                        if (accessLevel < 500) return;
-                        for (let id in floatStorage) {
-                            removeFloat(id);
-                        }
-                        ttsStorage = ttsStorage.map(function (v) {
-                            v.pause();
-                            v.remove();
-                            return null;
-                        });
-                        ttsStorage = [];
-                    }
+                    // case 'stop': {
+                    //     if (accessLevel < 500) return;
+                    //     for (let id in floatStorage) {
+                    //         removeFloat(id);
+                    //     }
+                    //     ttsStorage = ttsStorage.map(function (v) {
+                    //         v.pause();
+                    //         v.remove();
+                    //         return null;
+                    //     });
+                    //     ttsStorage = [];
+                    // }
                         break;
                     case 'show': {
                         if (accessLevel < 500) return;
@@ -2366,91 +2366,91 @@ var Chat = {
                             '</iframe>', timeout, 0);
                     }
                         break;
-                    case 'tts-reads-chat': {
-                        if (!isThisOverlayVisible()) return;
-                        if (accessLevel < 1000) return;
+                    // case 'tts-reads-chat': {
+                    //     if (!isThisOverlayVisible()) return;
+                    //     if (accessLevel < 1000) return;
 
-                        if (args[2] === 'on') {
-                            Chat.info.ttsReadsChat = true;
-                        } else if (args[2] === 'off') {
-                            Chat.info.ttsReadsChat = false;
-                        } else {
-                            Chat.info.ttsReadsChat = !Chat.info.ttsReadsChat;
-                        }
-                    } break;
-                    case 'tts': {
-                        if (Chat.info.ttsReadsChat)
-                            accessLevel = 500;
-                        if (!isThisOverlayVisible()) return;
-                        // if (Chat.info.channel.toLowerCase() === 'mmattbtw') accessLevel = 500;
-                        if (accessLevel < 500) return;
-                        if (Chat.info.channel.toLowerCase() === 'weest') {
-                            if (accessLevel === 700) return;
-                        }
-                        // let url = 'https://streamlabs.com/polly/speak';
-                        let url = 'https://chat.mikoroonii.com/v2/tts/';
-                        let volumeMatch = text.match(/ -v ([\d.]+)/);
-                        let volume = parseFloat((volumeMatch || [])[1]) || 0.5;
-                        let voiceMatch = text.match(/ -s ([\S]+)/);
-                        let voice = (voiceMatch || [])[1] || 'Brian';
-                        if (voiceMatch) {
-                            text = text.substr(0, voiceMatch.index)
-                                + text.substr(voiceMatch.index + voiceMatch[0].length);
-                        }
-                        if (volumeMatch) {
-                            text = text.substr(0, volumeMatch.index)
-                                + text.substr(volumeMatch.index + volumeMatch[0].length);
-                        }
-                        text = text.substr('!chatis tts '.length);
+                    //     if (args[2] === 'on') {
+                    //         Chat.info.ttsReadsChat = true;
+                    //     } else if (args[2] === 'off') {
+                    //         Chat.info.ttsReadsChat = false;
+                    //     } else {
+                    //         Chat.info.ttsReadsChat = !Chat.info.ttsReadsChat;
+                    //     }
+                    // } break;
+                    // case 'tts': {
+                    //     if (Chat.info.ttsReadsChat)
+                    //         accessLevel = 500;
+                    //     if (!isThisOverlayVisible()) return;
+                    //     // if (Chat.info.channel.toLowerCase() === 'mmattbtw') accessLevel = 500;
+                    //     if (accessLevel < 500) return;
+                    //     if (Chat.info.channel.toLowerCase() === 'weest') {
+                    //         if (accessLevel === 700) return;
+                    //     }
+                    //     // let url = 'https://streamlabs.com/polly/speak';
+                    //     let url = 'https://chat.mikoroonii.com/v2/tts/';
+                    //     let volumeMatch = text.match(/ -v ([\d.]+)/);
+                    //     let volume = parseFloat((volumeMatch || [])[1]) || 0.5;
+                    //     let voiceMatch = text.match(/ -s ([\S]+)/);
+                    //     let voice = (voiceMatch || [])[1] || 'Brian';
+                    //     if (voiceMatch) {
+                    //         text = text.substr(0, voiceMatch.index)
+                    //             + text.substr(voiceMatch.index + voiceMatch[0].length);
+                    //     }
+                    //     if (volumeMatch) {
+                    //         text = text.substr(0, volumeMatch.index)
+                    //             + text.substr(volumeMatch.index + volumeMatch[0].length);
+                    //     }
+                    //     text = text.substr('!chatis tts '.length);
 
-                        const speakUsingUrl = function (speakUrl) {
-                            let id = ttsStorage.push(new Audio(speakUrl)) - 1;
-                            ttsStorage[id].addEventListener('canplaythrough', () => {
-                                ttsStorage[id].volume = volume;
-                                ttsStorage[id].play();
-                            });
-                            ttsStorage[id].addEventListener('ended', () => {
-                                ttsStorage[id].remove();
-                                ttsStorage[id] = null;
-                            });
-                        }
+                    //     const speakUsingUrl = function (speakUrl) {
+                    //         let id = ttsStorage.push(new Audio(speakUrl)) - 1;
+                    //         ttsStorage[id].addEventListener('canplaythrough', () => {
+                    //             ttsStorage[id].volume = volume;
+                    //             ttsStorage[id].play();
+                    //         });
+                    //         ttsStorage[id].addEventListener('ended', () => {
+                    //             ttsStorage[id].remove();
+                    //             ttsStorage[id] = null;
+                    //         });
+                    //     }
 
-                        if (Chat.cache.tts.has(text)) {
-                            let speakUrl = Chat.cache.tts.get(text);
-                            speakUsingUrl(speakUrl);
-                        } else {
-                            let init = {
-                                method: 'POST',
-                                headers: {'Content-Type': 'application/json;charset=UTF-8'},
-                                mode: 'no-cors',
-                                body: JSON.stringify({
-                                    voice: voice,
-                                    text: text
-                                }),
-                            };
-                            fetch(url, init).then(function (response) {
-                                if (response.status !== 200)
-                                    throw new Error('StreamLabsAPI error: ' + response);
+                    //     if (Chat.cache.tts.has(text)) {
+                    //         let speakUrl = Chat.cache.tts.get(text);
+                    //         speakUsingUrl(speakUrl);
+                    //     } else {
+                    //         let init = {
+                    //             method: 'POST',
+                    //             headers: {'Content-Type': 'application/json;charset=UTF-8'},
+                    //             mode: 'no-cors',
+                    //             body: JSON.stringify({
+                    //                 voice: voice,
+                    //                 text: text
+                    //             }),
+                    //         };
+                    //         fetch(url, init).then(function (response) {
+                    //             if (response.status !== 200)
+                    //                 throw new Error('StreamLabsAPI error: ' + response);
 
-                                return response.json();
-                            }).then((data) => {
-                                // console.log(data);
-                                if (!data.success)
-                                    throw new Error('StreamLabsAPI failed:', data)
+                    //             return response.json();
+                    //         }).then((data) => {
+                    //             // console.log(data);
+                    //             if (!data.success)
+                    //                 throw new Error('StreamLabsAPI failed:', data)
 
-                                let responseSpeakUrl = (data || {}).speak_url;
-                                if (responseSpeakUrl) {
-                                    let speakUrl = responseSpeakUrl;
-                                    Chat.cache.tts.set(text, speakUrl);
-                                    speakUsingUrl(speakUrl);
-                                }
-                            }).catch(function (reason) {
-                                throw new Error('TTS error! Reason: ' + reason);
-                            });
-                        }
+                    //             let responseSpeakUrl = (data || {}).speak_url;
+                    //             if (responseSpeakUrl) {
+                    //                 let speakUrl = responseSpeakUrl;
+                    //                 Chat.cache.tts.set(text, speakUrl);
+                    //                 speakUsingUrl(speakUrl);
+                    //             }
+                    //         }).catch(function (reason) {
+                    //             throw new Error('TTS error! Reason: ' + reason);
+                    //         });
+                    //     }
                     
 
-                    }
+                    // }
                         break;
                     case 'spin':
                         if (accessLevel < 1000) return;
@@ -2485,6 +2485,15 @@ var Chat = {
                         if (!chatcontainer) return;
 
                         container.style.opacity = 1;
+                        break;
+                    case 'opacity':
+                        if (accessLevel < 1000) return
+                        chatcontainer = document.getElementById('chat_container');
+                        if (!chatcontainer) return;
+                        let opacityInput = parseFloat((text.match(/ ([\d.]+)/) || [])[1]);
+                        if (isNaN(opacityInput)) return;
+                        let opacityValue = Math.min(Math.max(opacityInput, 0), 100) / 100;
+                        chatcontainer.style.opacity = opacityValue;
                         break;
                     case 'audio':
                         if (accessLevel < 1000) return;
