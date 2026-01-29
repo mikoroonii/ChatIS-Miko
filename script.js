@@ -1,3 +1,5 @@
+console.log("%cI acknowledge and thank the much smarter developers that came before me, IS2511 and giambaJ. thanks for doing all the heavy lifting here lmao :)", "color: pink; font-size: 16px; font-weight: bold;");
+console.log("%c-Miko" , "color: lightgray; font-size: 14px; font-style: italic;");
 // Make images lazy load
 $('#example img').attr('loading', 'lazy');
 
