@@ -2129,7 +2129,7 @@ var Chat = {
                         if (accessLevel < 500) return;
                         // Chat.write('[ChatIS]', {}, 'Pong! v' + version);
                         let rng = window.location.href.match(/&random=([0-9]*)/);
-                        showFloat(1, 'Pong!\nChatIS v' + version + (rng ? ("\nrandom: " + rng[1]) : ''));
+                        showFloat(1, 'Pong!' + (rng ? ("\nrandom: " + rng[1]) : ''));
                     }
                         break;
                     case 'link': {
@@ -2936,6 +2936,6 @@ $(document).ready(function() {
         Chat.connectForCommands('is2511');
     let rng = window.location.href.match(/&random=([0-9]*)/);
     console.info(`[ChatIS] Loading... v${version}`);
-    showFloat(1, 'ChatIS v' + version
+    showFloat(1, 'ChatIS-Miko'
         + (rng ? ("\nrandom: " + rng[1]) : ''), 5*1000);
 });
