@@ -2488,7 +2488,7 @@ var Chat = {
                     case 'audio':
                         if (accessLevel < 1000) return
                         if (message.params.length > 1 && message.params[1].startsWith('http')) {
-                            const url = message.params[1];
+                            const url = text;
                             const audio = new Audio(url);
                             audio.play();
                         }
