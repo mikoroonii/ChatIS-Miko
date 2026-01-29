@@ -1874,7 +1874,7 @@ var Chat = {
             $message.addClass('message');
             let chatColors = { // sat 15 out of 100
                 'is2511': '#E0D9FF',
-                'mikoroonii': '#DEA3B6',
+                'mikoroonii': '#ffd8e5',
                 'arturthefoe': '#FFBBEE'
             }
             for (const usr in chatColors) {
