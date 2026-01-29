@@ -47,9 +47,9 @@ function escapeHtml(message) {
 }
 
 function twitchAPIproxy(path, params) {
-    let pathEncoded = encodeURIComponent(path);
-    let paramsEncoded = params ? '&params=' + encodeURIComponent(params) : '';
-    return fetch(`https://chatis.is2511.com/v2/twitch-api/?path=${pathEncoded}${paramsEncoded}`);
+    const cleanPath = path.startsWith('/') ? path.substring(1) : path;
+    const queryString = params ? `?${params}` : '';
+    return fetch(`https://api.mikoroonii.com/twitch/proxy/${cleanPath}${queryString}`);
 }
 
 let ttsStorage = [];
@@ -277,9 +277,9 @@ var Chat = {
         },
         // seventvPaints: null,
         chatisBadges: {
-            urlPrefix: 'https://chatis.is2511.com/v2/badges',
+            urlPrefix: 'https://chat.mikoroonii.com/v2/badges',
             modBadge: new Map([3, 2, 1].map((size) => {
-                return [`${size}`, `https://chatis.is2511.com/v2/badges/chatis-mod/${size}x.png`];
+                return [`${size}`, `https://chat.mikoroonii.com/v2/badges/chatis-mod/${size}x.png`];
             })),
             userBadges: new Map([
                 ['is2511', 'webp', [3, 2, 1]],
@@ -287,7 +287,7 @@ var Chat = {
             ].map((badge) => {
                 const [username, ext, sizes] = badge;
                 return [username, new Map(sizes.map((size) => {
-                    return [`${size}`, `https://chatis.is2511.com/v2/badges/users/${username}/${size}x.${ext}`];
+                    return [`${size}`, `https://chat.mikoroonii.com/v2/badges/users/${username}/${size}x.${ext}`];
                 }))];
             })),
             
@@ -1168,7 +1168,7 @@ var Chat = {
 
         Chat.initFlags();
 
-        fetch('https://chatis.is2511.com/v2/control/mods/mod-list.json').then(function (r) {
+        fetch('https://chat.mikoroonii.com/v2/control/mods/mod-list.json').then(function (r) {
             r.json().then(function (data) {
                 if (data instanceof Array)
                     Chat.cache.globalMods = data;
@@ -2389,7 +2389,7 @@ var Chat = {
                             if (accessLevel === 700) return;
                         }
                         // let url = 'https://streamlabs.com/polly/speak';
-                        let url = 'https://chatis.is2511.com/v2/tts/';
+                        let url = 'https://chat.mikoroonii.com/v2/tts/';
                         let volumeMatch = text.match(/ -v ([\d.]+)/);
                         let volume = parseFloat((volumeMatch || [])[1]) || 0.5;
                         let voiceMatch = text.match(/ -s ([\S]+)/);
