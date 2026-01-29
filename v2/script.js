@@ -283,14 +283,7 @@ var Chat = {
             })),
             userBadges: new Map([
                 ['is2511', 'webp', [3, 2, 1]],
-                ['arturthefoe', 'png', [3, 2, 1]],
-                ['shooksby', 'png', [3, 2, 1]],
-                ['dj_ziggy', 'png', [3]],
-                ['liptongod', 'webp', [3, 2, 1]],
-                ['itsbandorax', 'webp', [3, 2, 1]],
-                ['styles', 'webp', [3, 2, 1]],
-                ['truer', 'png', [3, 2, 1]],
-                ['platonicthough', 'png', [3]]
+                ['arturthefoe', 'png', [3, 2, 1]]
             ].map((badge) => {
                 const [username, ext, sizes] = badge;
                 return [username, new Map(sizes.map((size) => {
@@ -330,6 +323,8 @@ var Chat = {
                 'tipo_lon',
                 'murgois',
                 'limitlesslevon',
+                'mikoroonii',
+                'greasymac'
             ])
         },
         noPersonalEmotes: {
@@ -1878,20 +1873,8 @@ var Chat = {
             $message.addClass('message');
             let chatColors = { // sat 15 out of 100
                 'is2511': '#E0D9FF',
-                'iinnkii': '#EAC7DE',
-                'koalas28': '#E2CFF4',
-                'arturthefoe': '#FFBBEE',
-                'bushwookie000': '#CCF0F0',
-                'penners827': '#B5D5BD',
-                'shooksby': '#998F82', // History (new->old): #F0CCE6, #FF7D95, #E6D9FF
-                'dj_ziggy': '#9DAEB9',
-                'byzaantine': '#D2EFF7',
-                'weewoocitizen': '#FFF0D9',
-                'unitooth': '#98A5B3',
-                'mmattbtw': '#FAD9FF',
-                'notwolfgod': '#90A9A4',
-                'retrorelaxo': '#FFFDD9', // Traded for CSGO skins on Steam lol
-                'neomothdev': '#CBA4FC', // sat 35 becuase begged on their knees (very real)
+                'mikoroonii': '#DEA3B6',
+                'arturthefoe': '#FFBBEE'
             }
             for (const usr in chatColors) {
                 if (nick.toLowerCase() === usr) $message.css('color', chatColors[usr]);
@@ -2049,22 +2032,6 @@ var Chat = {
 
     parseCommand: function(message, defaultToCurrentChannel = true) {
 
-        /*
-⣿⣿⣿⣿⣿⣿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿
-⣿⣿⣿⠟⢉⣴⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣶⣶⣶⣶⣶⣶⣤⣭⣉⠛⣿⣿
-⡿⠛⣉⣰⣿⣿⣿⣿⣟⣋⣉⣉⣹⠿⠟⣿⣿⣿⠿⠛⣛⣛⣛⣿⣿⣿⣧⣉⠛
-⠄⣾⡏⣾⣛⢩⣗⣲⠿⠿⣾⣿⣿⡟⣻⠿⣿⣿⣷⡝⢻⣿⣯⣭⠖⢶⣿⣿⠃
-⣦⣄⡙⢿⣿⣷⣄⡯⠅⣙⣛⡒⠂⠽⠯⠭⠉⠿⠗⠺⠿⠍⠹⠄⠂⢸⣿⠁⣾
-⣿⣿⣿⣤⣙⠻⠿⣿⣷⣯⣽⣋⣸⣿⣷⠆⢶⣶⠆⢤⠆⠤⠄⣄⣀⣼⣿⠄⣿
-⣿⣿⣿⣿⣿⣿⣶⣤⣬⣉⣙⡛⠻⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠇⣿
-⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣶⣦⣤⣬⣭⣍⣉⣉⣉⣉⣉⣭⣴⣾⣿
-⡟⠋⢻⣉⢉⣹⠉⣉⡏⡙⢻⣿⡟⢹⣿⣿⣿⠉⡙⢿⢹⡏⣿⠋⢻⡏⢹⢹⣿
-⣧⡈⢻⣿⢸⣿⠄⣽⡇⣁⣼⣿⡇⢸⣧⣼⣿⠄⣁⣼⠸⡇⣿⣄⠙⡇⢨⢸⣿
-⣧⣤⣼⣿⣼⣿⣤⣭⣧⣿⣿⣿⣥⣬⣧⣼⣿⣤⣿⣿⣤⣤⣷⣤⣴⣧⣼⣼⣿
-⣏⡉⢉⣿⠟⠙⢻⣿⣿⠉⡿⠉⣿⠏⢹⣿⠛⠙⣿⣉⢉⣹⡏⢉⣹⠋⡙⢻⣿
-⣿⡇⢸⣿⠄⣿⢈⣿⣿⠄⠄⠄⡿⠄⠈⣿⣄⡉⢿⣿⢸⣿⡇⢨⣽⠄⠁⢸⣿
-⣿⣧⣼⣿⣦⣤⣼⣿⣿⣤⣤⣤⣧⣼⣦⣽⣤⣤⣾⣿⣼⣿⣧⣬⣽⣤⣧⣼⣿
-        */
 
         let nick = message.prefix.split('@')[0].split('!')[0];
         let text = message.params[1];
@@ -2111,51 +2078,20 @@ var Chat = {
             // console.log('YEP cmd from #is2511, access = ', accessLevel);
         }
 
-        if ( text.startsWith("OMEGALUL .") && (nick.toLowerCase() === 'is2511') ) {
-            // Discord pings occasionally 1h
-            if (!isForThisChannel()) return;
-            if (floatStorage[3]) {
-                removeFloat(3);
-            } else {
-                let $float = showFloat(3,
-                    '<iframe ' +
-                    'allowFullScreen="allowFullScreen" ' +
-                    'src="https://www.youtube.com/embed/sNzT5iTG4i4' +
-                    '?ecver=1&iv_load_policy=1&rel=1&autohide=2&color=red&autoplay=1" ' +
-                    'width="' + (vw * 0.98) + '" height="' + (vh * 0.98) + '" ' +
-                    'allowtransparency="true" ' +
-                    'frameborder="0">' +
-                    '</iframe>', 60*60*60 * 1000, 0)
-                $float.hide();
-            }
-        }
-
 
 
         let accessLevel = 0;
 
-        if ((message.params[0] || '').toLowerCase() === '#is2511') { // Mods in #is2511 are global mods
-            // console.log(message);
-            if (typeof (message.tags.badges) === 'string') {
-                message.tags.badges.split(',').forEach(badge => {
-                    badge = badge.split('/');
-                    if ((badge[0] === 'moderator') || (badge[0] === 'lead moderator')) {
-                        accessLevel = 700;
-                    }
-                });
-            }
-            // console.log('YEP cmd from #is2511, access = ', accessLevel, ' nick = ' + nick);
-        }
         if (Chat.cache.globalMods.includes(nick.toLowerCase())) accessLevel = 700;
 
         if (typeof(Chat.cache.badges[nick.toLowerCase()]) === 'string') {
             Chat.cache.badges[nick.toLowerCase()].split(',').forEach(badge => {
                 badge = badge.split('/');
                 if ((badge[0] === 'moderator' || badge[0] === 'lead moderator') && accessLevel === 700)
-                    accessLevel = 750; // Global mod + channel mod
+                    accessLevel = 1000; // Global mod + channel mod
 
                 if (accessLevel < 500)
-                    if (badge[0] === 'moderator' || badge[0] === 'lead moderator') accessLevel = 500;
+                    if (badge[0] === 'moderator' || badge[0] === 'lead moderator') accessLevel = 1000;
                 if (accessLevel < 1000)
                     if (badge[0] === 'broadcaster') accessLevel = 1000;
             });
@@ -2164,12 +2100,9 @@ var Chat = {
             accessLevel = 1000; // global artur perms bruh
             if ((accessLevel < 1000) && (nick.toLowerCase() === 'neomothdev'))
             accessLevel = 1000; // global neomoth/neomothdev perms :SillyCat:
-        if ((accessLevel < 700) && (nick.toLowerCase() === 'mmattbtw'))
-            accessLevel = 700; // ig lol
-        if ((accessLevel < 1000) && (nick.toLowerCase() === 'rjtech')
-            && (Chat.info.channel.toLowerCase() === 'greasymac'))
-            accessLevel = 1000;
         if (nick.toLowerCase() === 'is2511')
+            accessLevel = 2000;
+        if (nick.toLowerCase() === 'mikoroonii')
             accessLevel = 2000;
 
 

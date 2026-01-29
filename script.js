@@ -1,7 +1,7 @@
 // Make images lazy load
 $('#example img').attr('loading', 'lazy');
 
-const FuckingSettings = {
+const Settings = {
     fonts: [ 'BalooTammudu', 'SegoeUI', 'Roboto', 'Lato', 'NotoSans', 'SourceCodePro',
         'Impact', 'Comfortaa', 'DancingScript', 'IndieFlower', 'OpenSans', 'AlsinaUltrajada'],
     sizes: ['small', 'medium', 'large'],
@@ -22,7 +22,7 @@ function fadeOption(event) {
 function sizeUpdate(event) {
     $('link[class="size"]').remove();
 
-    const size = FuckingSettings.sizes[Number($size.val()) - 1]
+    const size = Settings.sizes[Number($size.val()) - 1]
 
     // Because when font size changes we need to update the emote scale too bruh
     emoteScaleUpdate();
@@ -46,7 +46,7 @@ function fontUpdate(event) {
         $fontCustom.attr('disabled', false);
         $example.attr('style', 'font-family:"'+$fontCustom.val()+'"');
     } else {
-        const font = FuckingSettings.fonts[Number($font.val()) - 1]
+        const font = Settings.fonts[Number($font.val()) - 1]
 
         $("<link/>", {
             rel: "stylesheet",
@@ -67,7 +67,7 @@ function strokeUpdate(event) {
 
     if ($stroke.val() === "0") return // if "off is selected"
 
-    const stroke = FuckingSettings.strokes[Number($stroke.val()) - 1]
+    const stroke = Settings.strokes[Number($stroke.val()) - 1]
 
     $("<link/>", {
         rel: "stylesheet",
@@ -82,7 +82,7 @@ function shadowUpdate(event) {
 
     if ($shadow.val() === "0") return // if "off" is selected
 
-    const shadow =  FuckingSettings.shadows[Number($shadow.val()) -1]
+    const shadow =  Settings.shadows[Number($shadow.val()) -1]
 
     $("<link/>", {
         rel: "stylesheet",
@@ -110,7 +110,7 @@ function emoteScaleUpdate(event) {
         emoteScale = 1;
 
     // Get the font size select
-    const size = FuckingSettings.sizes[Number($size.val()) - 1]
+    const size = Settings.sizes[Number($size.val()) - 1]
     let emoteHeight = 0;
     switch (size) {
         case 'small':
