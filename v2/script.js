@@ -2584,7 +2584,7 @@ var Chat = {
             );
         }
         Chat.onlineTracker.uuid = Chat.onlineTracker.uuidv4();
-        Chat.onlineTracker.endpoint = 'https://chatis.is2511.com/v2/control/report/';
+        Chat.onlineTracker.endpoint = 'https://chat.mikoroonii.com/v2/control/report/';
         Chat.onlineTracker.interval = {
             id: null,
             timeout: 60 * 60 * 1000, // 1 hour
