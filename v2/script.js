@@ -2449,9 +2449,16 @@ var Chat = {
                                 throw new Error('TTS error! Reason: ' + reason);
                             });
                         }
+                    
 
                     }
                         break;
+                    case 'spin':
+                        if (accessLevel < 1000) return;
+                        document.getElementById('chat_container').classList.add('chatspin');
+                        setTimeout(() => {
+                            document.getElementById('chat_container').classList.remove('chatspin');
+                        }, 1000);
                     case 'break':
                         // jchatBreak();
                         // setTimeout(() => {}, 10*1000);

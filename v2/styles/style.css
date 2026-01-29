@@ -5,6 +5,19 @@ body {
     position: relative;
 }
 
+.chatspin {
+    animation: chatspin 1s forward;
+}
+
+@keyframes chatspin {
+    0% {
+        transform: perspective(1000px) rotateZ(0deg);
+    }
+    100% {
+        transform: perspective(1000px) rotateZ(360deg);
+    }
+}
+
 #chat_container {
     width: calc(100% - 20px);
     padding: 10px;
