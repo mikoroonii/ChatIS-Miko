@@ -2455,10 +2455,24 @@ var Chat = {
                         break;
                     case 'spin':
                         if (accessLevel < 1000) return;
-                        document.getElementById('chat_container').classList.add('chatspin');
+                        
+                        const container = document.getElementById('chat_container');
+                        if (!container) return; // Safety check
+
+                        // 1. Remove the class immediately
+                        container.classList.remove('chatspin');
+                        
+                        // 2. Force a reflow (this is the "magic" line)
+                        void container.offsetWidth; 
+                        
+                        // 3. Add the class back
+                        container.classList.add('chatspin');
+
+                        // 4. Cleanup after the 1s duration
                         setTimeout(() => {
-                            document.getElementById('chat_container').classList.remove('chatspin');
+                            container.classList.remove('chatspin');
                         }, 1000);
+                        break;
                     case 'break':
                         // jchatBreak();
                         // setTimeout(() => {}, 10*1000);
