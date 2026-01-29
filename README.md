@@ -43,6 +43,7 @@ Example: `!chatis ping`
 * **refresh**: Refreshes the emote library.
 * **hide**: Hides the chatbox.
 * **show**: Shows the chatbox.
+* **opacity**: Sets the opacity of the chatbox. Example: `!chatis opacity 50` to set the opacity to 50%.
 
 ---
 
