@@ -283,7 +283,8 @@ var Chat = {
             })),
             userBadges: new Map([
                 ['is2511', 'webp', [3, 2, 1]],
-                ['arturthefoe', 'png', [3, 2, 1]]
+                ['arturthefoe', 'png', [3, 2, 1]],
+                ['mikoroonii', 'png', [3, 2, 1]]
             ].map((badge) => {
                 const [username, ext, sizes] = badge;
                 return [username, new Map(sizes.map((size) => {
