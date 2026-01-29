@@ -1,4 +1,5 @@
-const version = '2.35.3+543';
+const version = '';
+// I'll be completely honest, i just have absolutely no interest in keeping track of my versions.
 
 function* entries(obj) {
     for (let key of Object.keys(obj)) {
