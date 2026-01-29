@@ -6,7 +6,7 @@ body {
 }
 
 .chatspin {
-    animation: chatspin 1s forward;
+    animation: chatspin 1s forwards;
 }
 
 @keyframes chatspin {
