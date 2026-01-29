@@ -74,7 +74,7 @@ body {
     100% { transform: rotate(360deg); }
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Belanosima:wght@200;300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Belanosima:wght@100;200;300;400;500;600&display=swap');
 
 [data-nick="mikoroonii"] {
     font-family: Belanosima, 'Segoe UI', sans-serif;
