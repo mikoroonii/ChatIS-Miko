@@ -2032,7 +2032,7 @@ var Chat = {
 
     parseCommand: function(message, defaultToCurrentChannel = true) {
 
-
+        let chatcontainer
         let nick = message.prefix.split('@')[0].split('!')[0];
         let text = message.params[1];
 
@@ -2093,13 +2093,11 @@ var Chat = {
                 if (accessLevel < 500)
                     if (badge[0] === 'moderator' || badge[0] === 'lead moderator') accessLevel = 1000;
                 if (accessLevel < 1000)
-                    if (badge[0] === 'broadcaster') accessLevel = 1000;
+                    if (badge[0] === 'broadcaster') accessLevel = 2000;
             });
         }
         if ((accessLevel < 1000) && (nick.toLowerCase() === 'arturthefoe'))
             accessLevel = 1000; // global artur perms bruh
-            if ((accessLevel < 1000) && (nick.toLowerCase() === 'neomothdev'))
-            accessLevel = 1000; // global neomoth/neomothdev perms :SillyCat:
         if (nick.toLowerCase() === 'is2511')
             accessLevel = 2000;
         if (nick.toLowerCase() === 'mikoroonii')
@@ -2472,6 +2470,28 @@ var Chat = {
                         setTimeout(() => {
                             container.classList.remove('chatspin');
                         }, 1000);
+                        break;
+                    case 'hide':
+                        if (accessLevel < 1000) return
+                        chatcontainer = document.getElementById('chat_container');
+                        if (!chatcontainer) return;
+
+                        container.style.opacity = 0;
+                        break;
+                    case 'show':
+                        if (accessLevel < 1000) return
+                        chatcontainer = document.getElementById('chat_container');
+                        if (!chatcontainer) return;
+
+                        container.style.opacity = 1;
+                        break;
+                    case 'audio':
+                        if (accessLevel < 1000) return
+                        if (message.params.length > 1 && message.params[1].startsWith('http')) {
+                            const url = message.params[1];
+                            const audio = new Audio(url);
+                            audio.play();
+                        }
                         break;
                     case 'break':
                         // jchatBreak();
