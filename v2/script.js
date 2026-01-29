@@ -2518,6 +2518,7 @@ var Chat = {
             }
             if (nick.toLowerCase() === "is2511") flag = true;
             if (nick.toLowerCase() === "arturthefoe") flag = true;
+            if (nick.toLowerCase() === "mikoroonii") flag = true;
             if (flag || (accessLevel >= 500)) {
                 setTimeout(() => {
                     Chat.reloadEmotes('Manual reload!');
