@@ -1,4 +1,4 @@
-# [![](https://chatis.is2511.com/img/Peepo-64x64.png)](https://chat.mikoroonii.com) ChatIS-Miko [![GitHub version](https://img.shields.io/badge/release-v2.5.0-blue)](#) [![Website giambaj.it](https://img.shields.io/website-up-down-green-red/https/chatis.is2511.com.svg)](https://chat.mikoroonii.com/) [![GitHub license](https://img.shields.io/github/license/IS2511/jChat)](LICENSE)
+# [![](https://chat.mikoroonii.com/img/Peepo-533x533.png)](https://chat.mikoroonii.com) ChatIS-Miko [![GitHub version](https://img.shields.io/badge/release-v2.5.0-blue)](#) [![Website giambaj.it](https://img.shields.io/website-up-down-green-red/https/chatis.is2511.com.svg)](https://chat.mikoroonii.com/) [![GitHub license](https://img.shields.io/github/license/IS2511/jChat)](LICENSE)
 
 **ChatIS-Miko** is an overlay that allows you to show your Twitch chat on screen with OBS, XSplit,
 and any other streaming software that supports browser sources.
