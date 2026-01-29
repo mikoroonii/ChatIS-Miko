@@ -73,6 +73,6 @@ body {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
-[data-nick="mikoroonii"] .user_info .nick {
+[data-nick="mikoroonii"] {
     font-family: Belanosima, 'Segoe UI', sans-serif;
 }
