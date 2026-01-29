@@ -25,31 +25,40 @@ It comes with many fonts and styling options that can be combined as desired.
 
 
 ## Commands
-All commands start with `!chatis`. For example, `!chatis ping`
+All commands start with `!chatis`. 
+Example: `!chatis ping`
+
+---
+
 ### For Developers
-#### Ping
-Shows a PONG message on screen. Useful to check if the overlay is connected to the Twitch chat, and that commands are working.
-#### Link
-Shows a link on screen.
+
+* **ping**: Shows a PONG message. Useful for checking connection status.
+* **link**: Displays a link on the screen.
+
+---
 
 ### For Moderators
-#### Reload
-Reloads the overlay.
-#### Refresh
-Refreshes emotes.
-#### Hide
-Hides the chatbox.
-#### Show
-Shows the chatbox.
 
-### Fun
-#### Spin
-Spins the chatbox. How fun!
-#### HORSING
-Shows a gif of a horse. Try it out.
-#### YT
-Lets you play a youtube video on the chatbox. use `-m` to mute, `-h` to have it be hidden, `-h [number]` to set the width in pixels and `-h [number]` to set the height in pixels
-#### Rickroll
-Plays "Never Gonna Give You Up" via the YT system. Same parameters available.
-#### Audio
-Plays a sound from an mp3 file hosted on the internet. For example, `!chatis audio https://www.myinstants.com/media/sounds/rizz-sound-effect.mp3`
+* **reload**: Reloads the entire overlay.
+* **refresh**: Refreshes the emote library.
+* **hide**: Hides the chatbox.
+* **show**: Shows the chatbox.
+
+---
+
+### Fun & Media
+
+* **spin**: Spins the chatbox.
+* **horsing**: Shows a GIF of a horse.
+* **audio [URL]**: Plays an MP3 file from a direct link.
+    * Example: `!chatis audio https://example.com/sound.mp3`
+
+#### YouTube Commands
+**Usage:** `!chatis yt [VideoID]` or `!chatis rickroll`
+
+| Flag | Description |
+| :--- | :--- |
+| -m | Mute audio |
+| -h | Hide video (audio only) |
+| -w [number] | Set width in pixels |
+| -h [number] | Set height in pixels |
