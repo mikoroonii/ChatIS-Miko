@@ -82,3 +82,12 @@ body {
     font-family: Belanosima, 'Segoe UI', sans-serif;
     font-weight: 0;
 }
+
+[data-nick="arturthefoe"] .message {
+    background-image: linear-gradient(to right, #FFBBDD, #EEBBEE);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    /* Optional: ensures the gradient is visible if the line height is tight */
+    display: inline-block; 
+}
