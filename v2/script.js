@@ -1874,8 +1874,7 @@ var Chat = {
             var $message = $('<span></span>');
             $message.addClass('message');
             let chatColors = { // sat 15 out of 100
-                'is2511': '#E0D9FF',
-                'mikoroonii': '#ffd8e5'
+                'is2511': '#E0D9FF'
             }
             for (const usr in chatColors) {
                 if (nick.toLowerCase() === usr) $message.css('color', chatColors[usr]);

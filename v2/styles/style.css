@@ -83,6 +83,13 @@ body {
     font-weight: 0;
 }
 
+[data-nick="mikoroonii"] .message {
+    background-image: radial-gradient(circle, #ffffff, #eebbdb);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
 [data-nick="arturthefoe"] .message {
     background-image: radial-gradient(circle, #FFBBDD, #DDBBEE);
     -webkit-background-clip: text;
