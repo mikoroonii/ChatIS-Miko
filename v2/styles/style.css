@@ -84,7 +84,7 @@ body {
 }
 
 [data-nick="mikoroonii"] .message {
-    background-image: radial-gradient(circle, #ffffff, #eebbdb);
+    background-image: radial-gradient(circle, #ffffff, #f4daea);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
