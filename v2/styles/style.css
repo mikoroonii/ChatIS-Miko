@@ -78,7 +78,7 @@ body {
 
 
 
-[data-nick="mikoroonii"] {
+[data-nick="mikoroonii"] .user_info .nick {
     font-family: Belanosima, 'Segoe UI', sans-serif;
     font-weight: 0;
 }
