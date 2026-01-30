@@ -84,7 +84,7 @@ body {
 }
 
 [data-nick="arturthefoe"] .message {
-    background-image: linear-gradient(to right, #FFBBDD, #EEBBEE);
+    background-image: radial-gradient(circle, #FFBBDD, #DDBBEE);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
