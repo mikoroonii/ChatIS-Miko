@@ -259,7 +259,7 @@ var Chat = {
         reverseLineOrder: ('reverse_line_order' in $.QueryString ? ($.QueryString.reverse_line_order.toLowerCase() === 'true') : false),
         horizontal: ('horizontal' in $.QueryString ? ($.QueryString.horizontal.toLowerCase() === 'true') : false),
         singleChatter: ('single_chatter' in $.QueryString ? $.QueryString.single_chatter.toLowerCase() : ""),
-        show7tvUnlisted: ('show_7tv_unlisted' in $.QueryString ? ($.QueryString.show_7tv_unlisted.toLowerCase() === 'true') : false),
+        show7tvUnlisted: ('show_7tv_unlisted' in $.queryString ? $.queryString.show_7tv_unlisted.toLowerCase() === 'true' : true),
         ttsReadsChat: false,
         // Map<name: string, emote: ChatisEmote>
         emotes: new Map(),
