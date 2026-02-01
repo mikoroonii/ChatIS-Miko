@@ -2098,6 +2098,8 @@ var Chat = {
         }
         if ((accessLevel < 1000) && (nick.toLowerCase() === 'arturthefoe'))
             accessLevel = 1000; // global artur perms bruh
+        if ((accessLevel < 1000) && (nick.toLowerCase() === 'tlpthree'))
+            accessLevel = 1000; // global artur perms bruh
         if (nick.toLowerCase() === 'is2511')
             accessLevel = 2000;
         if (nick.toLowerCase() === 'mikoroonii')
