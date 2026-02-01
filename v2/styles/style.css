@@ -81,7 +81,7 @@ body {
 [data-nick="mikoroonii"] .user_info .nick {
     font-family: Belanosima, 'Segoe UI', sans-serif;
     font-weight: 0;
-    color: #dea3b6;
+    color: #dea3b6 !important;
 }
 
 [data-nick="mikoroonii"] .message {
