@@ -35,7 +35,12 @@ function updateNamepaintPreviews() {
         previewText.textContent = username;
         previewText.setAttribute('data-text', username);
         
-        previewText.classList.add(paintObj.class, 'namepainted');
+        if (paintObj.class != 'none') {
+            previewText.classList.add(paintObj.class, 'namepainted');
+        } else
+        {
+            previewText.style.color = 'white';
+        }
         
         nameLabel.textContent = paintObj.name;
         

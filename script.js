@@ -219,6 +219,7 @@ function generateURL() {
     if ($hideNames.is(':checked')) generatedUrl += '&hide_names=true';
     if ($markdown.is(':checked')) generatedUrl += '&markdown=true';
     if ($botNames.val() !== '') generatedUrl += '&botNames=' + $botNames.val();
+    if ($disableNamepaints.val() !== '') generatedUrl += '&disableNamepaints=' + $disableNamepaints.val();
 
     return generatedUrl;
 }
@@ -314,6 +315,7 @@ const $stroke = $("select[name='stroke']");
 const $shadow = $("select[name='shadow']");
 const $emoteScale = $("input[name='emoteScale']");
 const $botNames = $("input[name='botNames']");
+const $disableNamepaints = $("input[name='disableNamepaints']");
 const $brightness = $("#brightness");
 const $example = $('#example');
 const $result = $("#result");

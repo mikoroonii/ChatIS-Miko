@@ -277,6 +277,7 @@ var Chat = {
         horizontal: ('horizontal' in $.QueryString ? ($.QueryString.horizontal.toLowerCase() === 'true') : false),
         singleChatter: ('single_chatter' in $.QueryString ? $.QueryString.single_chatter.toLowerCase() : ""),
         show7tvUnlisted: ('show_7tv_unlisted' in $.QueryString ? ($.QueryString.show_7tv_unlisted.toLowerCase() === 'true') : false),
+        disableNamepaint: ('disableNamepaints' in $.queryString ? $.queryString.disableNamepaints === 'on' : false),
         ttsReadsChat: false,
         // Map<name: string, emote: ChatisEmote>
         emotes: new Map(),
@@ -1851,7 +1852,7 @@ var Chat = {
             var $username = $('<span></span>');
             $username.addClass('nick');
             const foundNamepaint = namepaintData.find(np => np.user === nick);
-            if (foundNamepaint) {
+            if (foundNamepaint && foundNamepaint.namepaint != 'none') {
                 $username.addClass(foundNamepaint.namepaint);
                 $username.addClass('namepainted');
                 $($username).attr('data-text', info['display-name']);
