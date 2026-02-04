@@ -1,0 +1,54 @@
+[
+    {
+        "name": "Bubblegum Electric",
+        "class": "bubblegum"
+    },
+    {
+        "name": "Burger Buns",
+        "class": "burger"
+    },
+    {
+        "name": "Candy Cane",
+        "class": "candycane"
+    },
+    {
+        "name": "Game Changer",
+        "class": "gamechanger"
+    },
+    {
+        "name": "Rainbow",
+        "class": "rainbow"
+    },
+    {
+        "name": "Pride",
+        "class": "pride"
+    },
+    {
+        "name": "Lesbian",
+        "class": "lesbian"
+    },
+    {
+        "name": "Bisexual",
+        "class": "bisexual"
+    },
+    {
+        "name": "Asexual",
+        "class": "asexual"
+    },
+    {
+        "name": "Transgender",
+        "class": "transgender"
+    },
+    {
+        "name": "Progress",
+        "class": "progress"
+    },
+    {
+        "name": "MLM",
+        "class": "mlm"
+    },
+    {
+        "name": "Pop Fizz",
+        "class": "popfizz"
+    }
+]

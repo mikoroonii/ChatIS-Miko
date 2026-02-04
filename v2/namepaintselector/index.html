@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namepaint Selector</title>
+    <link rel="stylesheet" href="../../styles/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7TbWCxFSQP3ai/QLWbeAMP4kRZhZ0VPm4SzKN" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="namepaints.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Select Your Namepaint</h1>
+    
+    <label for="username">Username</label>
+    <input type="text" id="username" name="username" required maxlength="25" oninput="updateUsername()">
+    <br><br>
+    
+    <label for="namepaint">Choose a namepaint:</label>
+    <div class="grid-container" id="namepaint-container"></div>
+    
+    <div id="confirmation-container" style="display: none; width: 100%; max-width: 400px; margin: 20px 0;">
+        <p style="margin-bottom: 10px; font-size: 14px;">
+            Type <strong>CONFIRM</strong> in 
+            <a href="https://twitch.tv/mikoroonii" target="_blank" style="color: #9146FF; text-decoration: none; font-weight: bold;">
+                mikoroonii's Twitch chat
+            </a> 
+            within 30 seconds to confirm your namepaint.
+        </p>
+        
+        <button id="confirm-btn" style="position: relative; width: 100%; height: 50px; background: #333; color: white; border: none; border-radius: 4px; overflow: hidden; cursor: default; font-size: 16px; font-weight: bold;">
+            <div id="timer-bar" style="position: absolute; top: 0; left: 0; height: 100%; width: 100%; background: #9146FF; transition: width 1s linear; z-index: 1;"></div>
+            <span id="btn-text" style="position: relative; z-index: 2;">WAITING FOR CHAT...</span>
+        </button>
+    </div>
+
+    <button type="submit" id="submit-button" class="submit-button" onclick="submitNamepaint()" hidden>Submit</button>
+
+</body>
+
+<template id="namepaintpreview">
+    <div class="np-preview-card" data-paint="blank">
+        <p class="np-display-text"></p> 
+        <p class="np-name"></p>
+    </div>
+</template>
+</html>

@@ -18,6 +18,22 @@ const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeig
 const obsVersionStr = (navigator.userAgent.match(/OBS\/([^\s]+)/) || [])[1];
 const obsVersion = obsVersionStr ? parseSemver(obsVersionStr) : null;
 
+let namepaintData = [];
+
+async function loadCustomNamepaintData() {
+    const url = "https://submissions.cdn.mikoroonii.com/namepaints.json";
+    
+    try {
+        const response = await fetch(url);
+        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+        
+        namepaintData = await response.json();
+    } catch (error) {
+        console.error("Could not fetch namepaint JSON:", error);
+    }
+}
+
+
 (function($) { // Thanks to BrunoLM (https://stackoverflow.com/a/3855394)
     $.QueryString = (function(paramsArray) {
         let params = {};
@@ -1833,6 +1849,10 @@ var Chat = {
             // Writing username
             var $username = $('<span></span>');
             $username.addClass('nick');
+            const foundNamepaint = namepaintData.find(np => np.user === nick);
+            if (foundNamepaint) {
+                $username.addClass(foundNamepaint.namepaint);
+            }
             let color = '';
             if (typeof(info.color) === 'string') {
                 if (tinycolor(info.color).getBrightness() <= 50) color = tinycolor(info.color).lighten(30);

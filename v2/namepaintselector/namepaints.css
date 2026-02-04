@@ -1,0 +1,93 @@
+.namepainted {
+    position: relative;
+    display: inline-block;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+.namepainted::before {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    color: white;
+    -webkit-text-fill-color: white;
+    filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.5));
+    white-space: nowrap;
+}
+
+.namepainted::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    background: var(--paint-gradient);
+    background-size: var(--bg-size, 100% 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    white-space: nowrap;
+    animation: var(--animation-name, none) var(--animation-duration, 3s) linear infinite;
+}
+
+@keyframes shift {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 200% 0%; }
+}
+
+.burger {
+    --paint-gradient: linear-gradient(90deg, rgba(255, 188, 64, 1) 0% 25%, rgba(137, 254, 65, 1) 25% 30%, rgba(255, 225, 0, 1) 30% 35%, rgba(105, 68, 0, 1) 35% 65%, rgba(196, 24, 24, 1) 65% 70%, rgba(65, 199, 28, 1) 70% 75%, rgba(255, 188, 64, 1) 75% 100%);
+}
+
+.bubblegum {
+    --paint-gradient: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(237, 76, 146, 1) 100%);
+}
+
+.candycane {
+    --paint-gradient: repeating-linear-gradient(134deg, rgba(255, 0, 0, 1) 0%, rgba(255, 0, 0, 1) 10%, rgba(255, 255, 255, 1) 10%, rgba(255, 255, 255, 1) 20%);
+}
+
+.rainbow {
+    --paint-gradient: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet, red);
+    --animation-name: shift; /* Links to the @keyframes */
+    --bg-size: 200% auto;    /* Required for movement */
+    --animation-duration: 12s; /* Optional: overrides default 3s */
+}
+
+.pride {
+    --paint-gradient: linear-gradient(90deg, #E40303 0% 16.6%, #FF8C00 16.6% 33.3%, #FFED00 33.3% 50%, #008026 50% 66.6%, #24408E 66.6% 83.3%, #732982 83.3% 100%);
+}
+
+.lesbian {
+    --paint-gradient: linear-gradient(90deg, #D52D00 0% 20%, #EF7627 20% 40%, #FFFFFF 40% 60%, #D162A4 60% 80%, #A30262 80% 100%);
+}
+
+.bisexual {
+    --paint-gradient: linear-gradient(90deg, #D60270 0% 40%, #9B4F96 40% 60%, #0038A8 60% 100%);
+}
+
+.asexual {
+    --paint-gradient: linear-gradient(90deg, #000000 0% 25%, #A3A3A3 25% 50%, #FFFFFF 50% 75%, #800080 75% 100%);
+}
+
+.transgender {
+    --paint-gradient: linear-gradient(90deg, #5BCEFA 0% 20%, #F5A9B8 20% 40%, #FFFFFF 40% 60%, #F5A9B8 60% 80%, #5BCEFA 80% 100%);
+}
+
+.progress {
+    --paint-gradient: linear-gradient(90deg, rgb(0, 0, 0) 0% 5.88%, rgb(54, 35, 18) 5.88% 11.76%, rgb(120, 79, 23) 11.76% 17.64%, rgb(123, 201, 238) 17.64% 23.52%, rgb(243, 155, 181) 23.52% 29.4%, rgb(255, 255, 255) 29.4% 35.28%, rgb(237, 34, 36) 35.28% 41.16%, rgb(243, 91, 34) 41.16% 47.04%, rgb(249, 150, 33) 47.04% 52.92%, rgb(245, 193, 30) 52.92% 58.8%, rgb(241, 235, 27) 58.8% 64.68%, rgb(99, 199, 32) 64.68% 70.56%, rgb(12, 155, 73) 70.56% 76.44%, rgb(33, 135, 141) 76.44% 82.32%, rgb(57, 84, 165) 82.32% 88.2%, rgb(97, 55, 155) 88.2% 94.08%, rgb(147, 40, 142) 94.08% 100%);
+}
+
+.gamechanger {
+    --paint-gradient: linear-gradient(90deg, #d63c29 0% 11.1%, #f5d342 11.1% 22.2%, #f5a623 22.2% 33.3%, #4ec3e0 33.3% 44.4%, #d12e43 44.4% 55.5%, #4ec3e0 55.5% 66.6%, #f5a623 66.6% 77.7%, #f5d342 77.7% 88.8%, #d63c29 88.8% 100%);
+}
+
+.mlm {
+    --paint-gradient: linear-gradient(90deg, rgb(7, 141, 111) 0% 14.3%, rgb(38, 206, 170) 14.3% 28.6%, rgb(152, 202, 153) 28.6% 42.9%, rgb(255, 255, 255) 42.9% 57.1%, rgb(123, 173, 226) 57.1% 71.4%, rgb(80, 71, 191) 71.4% 85.7%, rgb(63, 26, 121) 85.7% 100%);
+}
+
+.popfizz {
+    --paint-gradient: linear-gradient(90deg, rgba(8, 86, 120, 1) 0%, rgba(8, 86, 120, 1) 21%, rgba(245, 211, 20, 1) 31%, rgba(245, 211, 20, 1) 42%, rgba(27, 146, 196, 1) 45%, rgba(45, 156, 204, 1) 52%, rgba(245, 211, 20, 1) 54%, rgba(248, 223, 83, 1) 68%, rgba(8, 86, 120, 1) 79%, rgba(8, 86, 120, 1) 100%);
+}
