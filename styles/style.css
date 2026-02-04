@@ -472,3 +472,27 @@ footer a {
 
 @import url('https://fonts.googleapis.com/css2?family=Belanosima:wght@200;300;400;500;600&display=swap');
 
+
+.namepaintPortal {
+    outline: 0;
+    border: 0;
+    font-family: Lato;
+    font-weight: semibold;
+    font-size: 2rem;
+    color: #dea3b6;
+    background-color: #3c102d;
+    padding: 1rem;
+    border-radius: 1rem;
+    transition: ease .02s all;
+}
+
+.namepaintPortal:hover {
+    background-color: #26031f;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.namepaintPortal:active {
+    background-color: #3c102d;
+    transform: scale(1.05);
+}
