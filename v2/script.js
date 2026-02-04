@@ -1854,6 +1854,7 @@ var Chat = {
             if (foundNamepaint) {
                 $username.addClass(foundNamepaint.namepaint);
                 $username.addClass('namepainted');
+                $username.setAttribute('data-text', info['display-name']);
             }
             let color = '';
             if (typeof(info.color) === 'string') {
