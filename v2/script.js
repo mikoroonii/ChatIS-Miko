@@ -1853,6 +1853,7 @@ var Chat = {
             const foundNamepaint = namepaintData.find(np => np.user === nick);
             if (foundNamepaint) {
                 $username.addClass(foundNamepaint.namepaint);
+                $username.addClass('namepainted');
             }
             let color = '';
             if (typeof(info.color) === 'string') {
