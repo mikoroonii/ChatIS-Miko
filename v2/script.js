@@ -1852,7 +1852,7 @@ var Chat = {
             var $username = $('<span></span>');
             $username.addClass('nick');
             const foundNamepaint = namepaintData.find(np => np.user === nick);
-            if (foundNamepaint && foundNamepaint.namepaint != 'none') {
+            if (foundNamepaint && foundNamepaint.namepaint != 'none' && Chat.info.disableNamepaints === false) {
                 $username.addClass(foundNamepaint.namepaint);
                 $username.addClass('namepainted');
                 $($username).attr('data-text', info['display-name']);
