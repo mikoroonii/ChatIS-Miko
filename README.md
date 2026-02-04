@@ -21,6 +21,7 @@ It comes with many fonts and styling options that can be combined as desired.
 - Fade old messages (on/off)
 - Hide bots messages and user commands (on/off)
 - !refreshoverlay to make newly added emotes appear (mods only)
+- Custom namepaints (for free!) [Pick yours here.](https://chat.mikoroonii.com/v2/namepaintselector/)
 
 
 
