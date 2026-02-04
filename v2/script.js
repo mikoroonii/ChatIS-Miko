@@ -21,7 +21,7 @@ const obsVersion = obsVersionStr ? parseSemver(obsVersionStr) : null;
 let namepaintData = [];
 
 async function loadCustomNamepaintData() {
-    const url = "https://submissions.cdn.mikoroonii.com/namepaints.json";
+    const url = "https://cdn-chat.mikoroonii.com/namepaints.json";
     
     try {
         const response = await fetch(url);
