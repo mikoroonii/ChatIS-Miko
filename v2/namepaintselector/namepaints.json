@@ -54,5 +54,41 @@
     {
         "name": "Pop Fizz",
         "class": "popfizz"
+    },
+    {
+        "name": "Homer Simpson",
+        "class": "homer"
+    },
+    {
+        "name": "Spongebob",
+        "class": "spongebob"
+    },
+    {
+        "name": "Blue Raspberry",
+        "class": "blueraspberry"
+    },
+    {
+        "name": "Hot Cocoa",
+        "class": "hotcocoa"
+    },
+    {
+        "name": "Thinking With Portals",
+        "class": "portals"
+    },
+    {
+        "name": "Slashed",
+        "class": "slashed"
+    },
+    {
+        "name": "Galaxy",
+        "class": "galaxy"
+    },
+    {
+        "name": "Tempered Steel",
+        "class": "tempered"
+    },
+    {
+        "name": "Popsicle",
+        "class": "popsicle"
     }
 ]
