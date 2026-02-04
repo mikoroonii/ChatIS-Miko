@@ -277,7 +277,7 @@ var Chat = {
         horizontal: ('horizontal' in $.QueryString ? ($.QueryString.horizontal.toLowerCase() === 'true') : false),
         singleChatter: ('single_chatter' in $.QueryString ? $.QueryString.single_chatter.toLowerCase() : ""),
         show7tvUnlisted: ('show_7tv_unlisted' in $.QueryString ? ($.QueryString.show_7tv_unlisted.toLowerCase() === 'true') : false),
-        disableNamepaint: (typeof $.queryString !== 'undefined' && $.queryString.disableNamepaints === 'on'),
+        disableNamepaint: ('disableNamepaints' in $.QueryString ? ($.QueryString.disableNamepaints.toLowerCase() === 'on') : false),
         ttsReadsChat: false,
         // Map<name: string, emote: ChatisEmote>
         emotes: new Map(),
