@@ -33,6 +33,7 @@ async function loadCustomNamepaintData() {
     }
 }
 
+loadCustomNamepaintData();
 
 (function($) { // Thanks to BrunoLM (https://stackoverflow.com/a/3855394)
     $.QueryString = (function(paramsArray) {
