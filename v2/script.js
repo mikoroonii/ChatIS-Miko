@@ -2340,6 +2340,11 @@ var Chat = {
                             '</img>', timeout, 0, fg ? 0 : -10);
                     }
                         break;
+                    case 'reloadnamepaints': {
+                        if (accessLevel < 1000) return;
+                        loadCustomNamepaintData();
+                    }
+                        break;
                     case 'yt': { // TODO: Move to youtube API to embed
                         if (!isThisOverlayVisible()) return;
                         if (accessLevel < 1000) return;
